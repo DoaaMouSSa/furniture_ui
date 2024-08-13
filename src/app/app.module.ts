@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -17,6 +16,12 @@ import { NewestComponent } from './home/newest/newest.component';
 import { ServicesComponent } from './home/services/services.component';
 import { NavbarAdminComponent } from './adminPanel/navbar-admin/navbar-admin.component';
 import { StatisticsComponent } from './home/statistics/statistics.component';
+import { ServiceIndexComponent } from './adminPanel/services/service-index/service-index.component';
+import { ServiceCreateComponent } from './adminPanel/services/service-create/service-create.component';
+import { ServiceEditComponent } from './adminPanel/services/service-edit/service-edit.component';
+import { ServiceDetailsComponent } from './adminPanel/services/service-details/service-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,11 +39,18 @@ import { StatisticsComponent } from './home/statistics/statistics.component';
     NewestComponent,
     ServicesComponent,
     NavbarAdminComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    ServiceIndexComponent,
+    ServiceCreateComponent,
+    ServiceEditComponent,
+    ServiceDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()

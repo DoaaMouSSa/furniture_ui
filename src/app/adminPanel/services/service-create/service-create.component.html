@@ -1,0 +1,28 @@
+ <form [formGroup]="createServiceFrom" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name">
+    <div *ngIf="createServiceFrom.get('name')?.invalid && createServiceFrom.get('name')?.touched">
+       Name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="description">description:</label>
+    <input id="description" formControlName="description">
+     <div *ngIf="createServiceFrom.get('description')?.invalid && createServiceFrom.get('description')?.touched">
+      <div *ngIf="createServiceFrom.get('description')?.errors?.['required']">description is required.</div>
+      <!-- <div *ngIf="contactForm.get('description').errors.description">Invalid description format.</div> -->
+    </div>
+  </div>
+
+  <div>
+    <label for="icon">icon:</label>
+    <textarea id="icon" formControlName="icon"></textarea>
+    <div *ngIf="createServiceFrom.get('icon')?.invalid && createServiceFrom.get('icon')?.touched">
+      icon is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="createServiceFrom.invalid">Save</button>
+<!-- </form> -->
