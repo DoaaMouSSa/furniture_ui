@@ -1,36 +1,26 @@
-import { Component,OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component} from '@angular/core';
 import { ServicesService } from '../../../services/services/services.service';
 @Component({
   selector: 'app-service-create',
   templateUrl: './service-create.component.html',
   styleUrl: './service-create.component.css'
 })
-export class ServiceCreateComponent implements OnInit {
-  createServiceFrom!:FormGroup;
-  constructor(
-    private fb: FormBuilder,
-    private servicesService: ServicesService //Inject your service
-  ) { }
+export class ServiceCreateComponent{
+  service = {
+    name: '',
+    description: '',
+    icon: ''
+  };
 
-  ngOnInit(){
-    this.createServiceFrom = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      icon: ['', Validators.required],
+  constructor(private _serviceService:ServicesService) {}
+  onSubmit() {
+    this._serviceService.addService(this.service)
+    .subscribe(response => {
+      console.log('Service added:', response);
+      // Optionally, you can clear the form or show a success message
+      this.service = { name: '', description: '',icon:'' };
+    }, error => {
+      console.error('Error adding service:', error);
     });
   }
-
-  onSubmit(): void {
-    if (this.createServiceFrom.valid) {
-      this.servicesService.addService(this.createServiceFrom.value).subscribe(response => {
-        console.log('Form submitted successfully', response);
-        // Handle success
-      }, error => {
-        console.error('Error submitting form', error);
-        // Handle error
-      });
-    }
-  }
-
 }
