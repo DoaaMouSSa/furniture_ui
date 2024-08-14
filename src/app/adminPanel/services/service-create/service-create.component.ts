@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { ServicesService } from '../../../services/services/services.service';
 @Component({
   selector: 'app-service-create',
