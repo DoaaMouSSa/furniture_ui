@@ -1,0 +1,24 @@
+ <!-- Start Product Section -->
+ <div class="product-section">
+  <div class="container">
+  <div class="row" *ngIf="data.length === 0">
+     <h1 class="text-danger text-center"> No Data found.</h1>
+    </div>
+
+    <div class="row">
+      <!-- Start Column 1 -->
+      <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" *ngFor="let item of data">
+        <a class="product-item" href="cart.html">
+          <img [src]="item.image ? apiUrl + item.image : ''" alt="{{ item.name }}" class="img-fluid product-thumbnail">
+          <h3 class="product-title">{{item.name}}</h3>
+          <p>{{item.desc}}</p>
+          <strong class="product-price">{{item.price|currency}}</strong>
+        </a>
+      </div>
+      <!-- End Column 1 -->
+
+
+    </div>
+  </div>
+</div>
+<!-- End Product Section -->

@@ -13,15 +13,21 @@ import { BrandsComponent } from './home/brands/brands.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { NewestComponent } from './home/newest/newest.component';
-import { ServicesComponent } from './home/services/services.component';
 import { NavbarAdminComponent } from './adminPanel/navbar-admin/navbar-admin.component';
 import { StatisticsComponent } from './home/statistics/statistics.component';
-import { ServiceIndexComponent } from './adminPanel/services/service-index/service-index.component';
-import { ServiceCreateComponent } from './adminPanel/services/service-create/service-create.component';
-import { ServiceEditComponent } from './adminPanel/services/service-edit/service-edit.component';
-import { ServiceDetailsComponent } from './adminPanel/services/service-details/service-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderDashboardComponent } from './adminPanel/header-dashboard/header-dashboard.component';
+import { HeroComponent } from './home/hero/hero.component';
+import { ProductComponent } from './home/product/product.component';
+import { ChooseUsComponent } from './home/choose-us/choose-us.component';
+import { HelpComponent } from './home/help/help.component';
+import { TestimonialsComponent } from './home/testimonials/testimonials.component';
+import { MainComponent } from './home/main/main.component';
+import { HomeComponent } from './home/home/home.component';
+import { ProductIndexComponent } from './adminPanel/product/product-index/product-index.component';
+import { ProductCreateComponent } from './adminPanel/product/product-create/product-create.component';
+import { ProductUpdateComponent } from './adminPanel/product/product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +43,19 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     NewestComponent,
-    ServicesComponent,
     NavbarAdminComponent,
     StatisticsComponent,
-    ServiceIndexComponent,
-    ServiceCreateComponent,
-    ServiceEditComponent,
-    ServiceDetailsComponent,
+    HeaderDashboardComponent,
+    HeroComponent,
+    ProductComponent,
+    ChooseUsComponent,
+    HelpComponent,
+    TestimonialsComponent,
+    MainComponent,
+    HomeComponent,
+    ProductIndexComponent,
+    ProductCreateComponent,
+    ProductUpdateComponent,
   ],
   imports: [
     BrowserModule,

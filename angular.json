@@ -38,23 +38,34 @@
               }
             ],
             "styles": [
-              "src/assets/css/font-awesome.min.css",
-              "src/assets/css/linearicons.css",
-              "src/assets/css/flaticon.css",
-              "src/assets/css/animate.css",
-              "src/assets/css/owl.carousel.min.css",
-              "src/assets/css/owl.theme.default.min.css",
               "src/assets/css/bootstrap.min.css",
-              "src/assets/css/bootsnav.css",
-              "src/assets/css/style.css",
-              "src/assets/css/responsive.css"
+              "src/assets/css/kaiadmin.min.css",
+              "src/assets/css/demo.css",
+              "src/assets/css/tiny-slider.css"
+
             ],
             "scripts": [
-              "src/assets/js/jquery.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/bootsnav.js",
-              "src/assets/js/owl.carousel.min.js",
-               "src/assets/js/custom.js"
+              "src/assets/js/modernizr.js",
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/tiny-slider.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/plugins.js",
+              "src/assets/js/script.js",
+              "src/assets/js/plugin/webfont/webfont.min.js",
+              "src/assets/js/core/jquery-3.7.1.min.js",
+              "src/assets/js/core/popper.min.js",
+              "src/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js",
+              "src/assets/js/plugin/chart.js/chart.min.js",
+              "src/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js",
+              "src/assets/js/plugin/chart-circle/circles.min.js",
+              "src/assets/js/plugin/datatables/datatables.min.js",
+              "src/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js",
+              "src/assets/js/plugin/jsvectormap/jsvectormap.min.js",
+              "src/assets/js/plugin/jsvectormap/world.js",
+              "src/assets/js/plugin/gmaps/gmaps.js",
+              "src/assets/js/plugin/sweetalert/sweetalert.min.js",
+        
+              "src/assets/js/kaiadmin.js"              
             ],
             "server": "src/main.server.ts",
             "prerender": true,
