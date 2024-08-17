@@ -10,7 +10,9 @@ a {
     text-decoration: none; }
   a.more {
     font-weight: 600; }
-
+    .active{
+      color:red!important;
+    }
 .custom-navbar {
   background: gray !important;
   padding-top: 20px;
@@ -75,3 +77,4 @@ a {
       margin-right: 0px; }
       .custom-navbar .custom-navbar-cta li:first-child {
         margin-right: 20px; }
+

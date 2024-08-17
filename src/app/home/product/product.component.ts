@@ -15,14 +15,12 @@ export class ProductComponent implements OnInit{
 
   ngOnInit(): void {
     this.loadData();
-    console.log(this.apiUrl)
   }
 
   loadData(): void {
     this._productService.getData().subscribe(
       (response) => {
         this.data = response;
-        console.log('Data received:', this.data);
       },
       (error) => {
         console.error('Error fetching data:', error);
