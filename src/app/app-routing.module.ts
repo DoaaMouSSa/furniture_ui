@@ -14,6 +14,7 @@ import { ProductUpdateComponent } from './adminPanel/product/product-update/prod
 import { TestimonialIndexComponent } from './adminPanel/testimonial/testimonial-index/testimonial-index.component';
 import { TestimonialCreateComponent } from './adminPanel/testimonial/testimonial-create/testimonial-create.component';
 import { TestimonialUpdateComponent } from './adminPanel/testimonial/testimonial-update/testimonial-update.component';
+import { RegisterComponent } from './authentication/register/register.component';
 const routes: Routes = [
   { path: '', component:MainLayoutComponent,children:[
     { path: '', redirectTo: '/home',pathMatch:'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
     { path: 'dashboard/testimonial/update', component: TestimonialUpdateComponent },
   ] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
   { path: '**', component: NotFoundComponent },
 ];
 

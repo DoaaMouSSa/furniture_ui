@@ -1,4 +1,44 @@
-<p>login works!</p>
-<input>
-<input>
-<button>Login</button>
+<form>
+  <div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+    <h1 class="mb-8 text-3xl text-center">login</h1>
+<!-- <button @click="changeLanguage('ar')">lang</button> -->
+<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+   User Name
+  </label>
+            <input
+                type="text"
+                class="block border border-grey-light w-full p-3 rounded mb-4"
+                formControlName="username"
+                />
+
+                    <p class="text-red-600"></p>
+
+
+                <!-- <p class="text-blue-600" v-if="v$.email.$error">{{ v$.email.$errors['email'].$message }}</p> -->
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                   password
+                </label>
+            <input
+                type="password"
+                class="block border border-grey-light w-full p-3 rounded mb-4"
+                formControlName="password"
+                />
+
+                    <p class="text-red-600">Password is required</p></div>
+
+            <button  type="submit" class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-md shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">
+                login
+</button>
+<div class="text-grey-dark mt-6">
+                     'havenoaccount'
+                    <a routerLink="/register" class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline">
+                        register
+                    </a>.
+                </div>
+        </div>
+        </div>
+
+
+</form>
