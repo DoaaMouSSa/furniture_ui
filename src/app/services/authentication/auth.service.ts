@@ -44,20 +44,16 @@ export class AuthService {
   getToken():Observable<string|null>{
     return this.tokenSubject.asObservable();
   }
-  // private getDecodedToken(){
-  //   const token=this.tokenSubject.value;
-  //   if(token){
-  //    return jwtDecode(token)
-  //   }else{
-  //     return 0
-  //   }
-  // }
+
   isAuthenticated():boolean{
   return this.tokenSubject.value!==null;
   }
 
   logOut():void{
+    alert('log')
     localStorage.removeItem('token');
     this.tokenSubject.next(null)
+    alert(localStorage.getItem('token'))
+
   }
 }

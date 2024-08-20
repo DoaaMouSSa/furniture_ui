@@ -15,6 +15,7 @@ import { TestimonialIndexComponent } from './adminPanel/testimonial/testimonial-
 import { TestimonialCreateComponent } from './adminPanel/testimonial/testimonial-create/testimonial-create.component';
 import { TestimonialUpdateComponent } from './adminPanel/testimonial/testimonial-update/testimonial-update.component';
 import { RegisterComponent } from './authentication/register/register.component';
+import {authenticationGuard} from './guard/authentication.guard';
 const routes: Routes = [
   { path: '', component:MainLayoutComponent,children:[
     { path: '', redirectTo: '/home',pathMatch:'full' },
@@ -25,7 +26,7 @@ const routes: Routes = [
   ] },
   { path: '', component:DashboardComponent,children:[
     // { path: '', redirectTo: '/product',pathMatch:'full' },
-    { path: 'dashboard/product/index', component: ProductIndexComponent },
+    { path: 'dashboard/product/index', component: ProductIndexComponent , canActivate: [authenticationGuard] },
     { path: 'dashboard/product/create', component: ProductCreateComponent },
     { path: 'dashboard/product/update', component: ProductUpdateComponent },
     { path: 'dashboard/testimonial/index', component: TestimonialIndexComponent },
