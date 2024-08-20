@@ -1,1 +1,34 @@
-<p>testimonial-index works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Testimonials Data</div>
+      </div>
+      <div class="card-body">
+        <div class="card-sub">
+          This is the basic table view of the Testimonials :
+        </div>
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Comment</th>
+              <th scope="col">Postition</th>
+              <th scope="col">Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of data">
+              <td>{{ product.name }}</td>
+              <td>{{ product.desc }}</td>
+              <td>{{ product.price | currency }}</td>
+              <td><img [src]="product.image ? apiUrl + product.image : ''" alt="{{ product.name }}" style="width: 100px;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

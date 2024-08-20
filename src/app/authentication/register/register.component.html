@@ -1,58 +1,77 @@
-<form>
-  <div class="bg-grey-lighter min-h-screen flex flex-col">
-    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-            <h1 class="mb-8 text-3xl text-center">register</h1>
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-    email
-  </label>
-    <input
-                type="text"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                v-model="email" />
-                <p class="text-red-600"></p>
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-    userName
-  </label>
-    <input
-                type="text"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                v-model="userName" />
+<div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="bg-grey-lighter min-h-screen flex flex-col">
+      <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+          <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+      <h1 class="mb-8 text-3xl text-center">Register</h1>
+  <!-- <button @click="changeLanguage('ar')">lang</button> -->
+  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+     Email
+    </label>
+              <input
+                  type="text"
+                  class="block border border-grey-light w-full p-3 rounded mb-4"
+                  formControlName="email" type="email"
+                  />
+                  <div *ngIf="registerForm.get('email')!.invalid && registerForm.get('email')!.touched">
+                    <p *ngIf="registerForm.get('email')!.errors?.['required']" class="text-red-600">Email is required.</p>
+                    <p *ngIf="registerForm.get('email')!.errors?.['email']" class="text-red-600">
+                      Enter a valid email.</p>
+                  </div>
+<!-- <button @click="changeLanguage('ar')">lang</button> -->
+<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+  Name
+ </label>
+           <input
+               type="text"
+               class="block border border-grey-light w-full p-3 rounded mb-4"
+               formControlName="name" type="text"
+               />
+               <div *ngIf="registerForm.get('name')!.invalid && registerForm.get('name')!.touched">
+                 <p *ngIf="registerForm.get('name')!.errors?.['required']" class="text-red-600">User Name is required.</p>
+               </div>
 
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                    password
-                </label>
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                     password
+                  </label>
+              <input
+                  type="password"
+                  class="block border border-grey-light w-full p-3 rounded mb-4"
+                  formControlName="password"
+                  />
+                  <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                    <p *ngIf="registerForm.get('password')?.errors?.['required']" class="text-red-600">Password is required.</p>
+                    <p *ngIf="registerForm.get('password')?.errors?.['minlength']" class="text-red-600">Password must be at least 6 characters long.</p>
+                  </div>
 
-            <input
-                type="password"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                v-model="password"/>
-                <p class="text-red-600"></p>
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-    retypepassword
-  </label>
-            <input
-                type="password"
-                class="block border border-grey-light w-full p-3 rounded mb-4"
-                name="retypepassword"
-                v-model="retypePass"
-                 />
-                 <p class="text-red-600"></p>
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                    Confirm Password
+                 </label>
+            <!-- Re-type Password Input -->
+        <input type="password"
+        class="block border border-grey-light w-full p-3 rounded mb-4"
+        formControlName="retypePassword"
+        />
+        <div *ngIf="registerForm.get('retypePassword')?.touched">
+          <p *ngIf="registerForm.get('retypePassword')?.errors?.['required']" class="text-red-600">Confirm Password is required </p>
 
-            <button   type="submit" class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-md shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">
-                create a new account
-
-</button>
-<div class="text-grey-dark mt-6">
-    already have account?
-
-                    <a routerLink="/login" class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline" >
-                        login
-                    </a>.
-                </div>
-        </div>
-
-
-    </div>
+          <div *ngIf="registerForm.errors?.['passwordMismatch']">
+            <p class="text-red-600">Passwords do not match.</p>
+          </div>
 </div>
-</form>
+              <button  [disabled]="registerForm!.invalid"  type="submit" class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-md shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 cursor-pointer">
+                  Register
+  </button>
+  <div class="text-grey-dark mt-6">
+                       Already have an account
+                      <a routerLink="/login" class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline">
+                          Login
+                      </a>.
+                  </div>
+                  <!-- <div>{{registerForm.value|json}}</div> -->
+
+          </div>
+          </div>
+    </div>
+  </form>
+  </div>
