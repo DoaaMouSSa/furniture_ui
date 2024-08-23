@@ -73,6 +73,7 @@ import { TestimonialUpdateComponent } from './adminPanel/testimonial/testimonial
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     provideClientHydration()

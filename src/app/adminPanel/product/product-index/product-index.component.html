@@ -5,9 +5,7 @@
         <div class="card-title">Products Data</div>
       </div>
       <div class="card-body">
-        <div class="card-sub">
-          This is the basic table view of the products :
-        </div>
+          <a class="btn btn-primary" routerLink="/dashboard/product/create">New Product</a>
         <table class="table mt-3">
           <thead>
             <tr>
@@ -15,6 +13,8 @@
               <th scope="col">Description</th>
               <th scope="col">Price</th>
               <th scope="col">Image</th>
+              <th scope="col">Update</th>
+              <th scope="col">Remove</th>
             </tr>
           </thead>
           <tbody>
@@ -22,7 +22,9 @@
               <td>{{ product.name }}</td>
               <td>{{ product.desc }}</td>
               <td>{{ product.price | currency }}</td>
-              <td><img [src]="product.image ? apiUrl + product.image : ''" alt="{{ product.name }}" style="width: 100px;"></td>
+              <td><img [src]="product.image ? apiUrl + product.image : ''" alt="{{ product.name }}" style="width: 80px;"></td>
+              <td>  <button class="btn btn-success btn-sm" (click)="goToUpdatedPage(product._id)">Edit</button></td>
+              <td>  <button class="btn btn-danger btn-sm">Remove</button></td>
             </tr>
           </tbody>
         </table>

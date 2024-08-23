@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class StatisticsService {
   constructor(private _http:HttpClient) { }
-  private apiUrl=`${environment.apiUrl}/statis/count`;
+  private apiUrl=`${environment.apiUrl}`;
   getData(): Observable<any> {
-    return this._http.get<any>(this.apiUrl);
+    return this._http.get<any>(this.apiUrl+"/statis/count");
   }
 }
