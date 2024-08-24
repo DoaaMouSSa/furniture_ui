@@ -5,7 +5,7 @@
       <label for="name">Product Name</label>
       <input type="text" id="name"class="form-control"
       formControlName="name">
-      <!-- <div *ngIf="name.invalid && name.touched" class="text-danger">Product name is required.</div> -->
+      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="text-danger">Product name is required.</div>
     </div>
 
     <div class="form-group">
@@ -19,14 +19,9 @@
       <label for="price">Price</label>
       <input type="number" min="10" max="10000" id="price" name="price" class="form-control"
       formControlName="price">
-      <!-- <div *ngIf="price.invalid && price.touched" class="text-danger">Price is required.</div> -->
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">Price is required.</div>
     </div>
 
-    <div class="form-group">
-      <label for="image">Image</label>
-      <input type="file" id="image" formControlName="image" class="form-control" (change)="onFileChange($event)" required>
-      <!-- <div *ngIf="!selectedImage" class="text-danger">Image is required.</div> -->
-    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

@@ -1,0 +1,22 @@
+  <h2 class="section-title text-center mb-4">Services</h2>
+<!-- Start Popular Product -->
+<div class="popular-product">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0" *ngFor="let item of data">
+        <div class="product-item-sm d-flex">
+          <div class="thumbnail h-7">
+            <img  [src]="item.image ? apiUrl + item.image : ''" alt="{{ item.title }}" class="img-fluid" width="200">
+          </div>
+          <div class="pt-3">
+            <h3>{{item.title}}</h3>
+            <p>{{item.paragraph}} </p>
+            <p>{{item.subTitle}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

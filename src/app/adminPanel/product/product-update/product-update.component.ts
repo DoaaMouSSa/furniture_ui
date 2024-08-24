@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product/product.service';
-import { ActivatedRoute  } from '@angular/router';
+import { ActivatedRoute ,Router } from '@angular/router';
 @Component({
   selector: 'app-product-update',
   templateUrl: './product-update.component.html',
   styleUrl: './product-update.component.css'
 })
 export class ProductUpdateComponent implements OnInit{
-  productId:String| null = null;
+
+   productId!:any;
   productForm!: FormGroup;
-  selectedImage: File | null = null;
-  constructor(private fb: FormBuilder,private _productService:ProductService,private _router:ActivatedRoute) {
+
+  constructor(private fb: FormBuilder,private _productService:ProductService,private _router:ActivatedRoute,private router:Router) {
     this.productForm = this.fb.group({
       name: ['', [Validators.required]],
       desc: [''],
       price: ['', [Validators.required]],
-      image: ['']
     });
   }
   ngOnInit(): void {
@@ -37,9 +37,20 @@ fillForm(){
     });
   });
 }
-onFileChange(event: any) {
-  this.selectedImage = event.target.files[0] as File;
-}
+
 onSubmit() {
-}
+  if (this.productForm.valid) {
+    this._productService.updateData(this.productId, this.productForm.value).subscribe(
+      response => {
+        console.log('Product updated successfully:', response);
+        this.router.navigate(['/dashboard/product/index']);
+
+      },
+      error => {
+        console.error('Error updating product:', error);
+      }
+    );
+  } else {
+    console.log('Form is invalid');
+  }}
 }

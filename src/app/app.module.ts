@@ -4,14 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ClientsComponent } from './home/clients/clients.component';
-import { FeaturesComponent } from './home/features/features.component';
 import { ContactComponent } from './home/contact/contact.component';
-import { AboutComponent } from './home/about/about.component';
-import { BrandsComponent } from './home/brands/brands.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
-import { NewestComponent } from './home/newest/newest.component';
 import { StatisticsComponent } from './home/statistics/statistics.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,20 +28,23 @@ import { MainLayoutComponent } from './home/main-layout/main-layout.component';
 import { TestimonialIndexComponent } from './adminPanel/testimonial/testimonial-index/testimonial-index.component';
 import { TestimonialCreateComponent } from './adminPanel/testimonial/testimonial-create/testimonial-create.component';
 import { TestimonialUpdateComponent } from './adminPanel/testimonial/testimonial-update/testimonial-update.component';
+import { ServiceIndexComponent } from './adminPanel/service/service-index/service-index.component';
+import { ServiceCreateComponent } from './adminPanel/service/service-create/service-create.component';
+import { ServiceUpdateComponent } from './adminPanel/service/service-update/service-update.component';
+import { MessageIndexComponent } from './adminPanel/message/message-index/message-index.component';
+import { ServiceComponent } from './home/service/service/service.component';
+import { ProductScreenComponent } from './home/product-screen/product-screen.component';
+import { TestimonialScreenComponent } from './home/testimonial-screen/testimonial-screen.component';
+import { ServiceScreenComponent } from './home/service-screen/service-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    ClientsComponent,
-    FeaturesComponent,
     ContactComponent,
-    AboutComponent,
-    BrandsComponent,
     LoginComponent,
     RegisterComponent,
-    NewestComponent,
     StatisticsComponent,
     HeroComponent,
     ProductComponent,
@@ -66,6 +64,14 @@ import { TestimonialUpdateComponent } from './adminPanel/testimonial/testimonial
     TestimonialIndexComponent,
     TestimonialCreateComponent,
     TestimonialUpdateComponent,
+    ServiceIndexComponent,
+    ServiceCreateComponent,
+    ServiceUpdateComponent,
+    MessageIndexComponent,
+    ServiceComponent,
+    ProductScreenComponent,
+    TestimonialScreenComponent,
+    ServiceScreenComponent,
   ],
   imports: [
     BrowserModule,

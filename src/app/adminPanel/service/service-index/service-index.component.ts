@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { ProductService } from '../../../services/product/product.service';
+import { ServiceService } from '../../../services/service/service.service';
 import { Router } from '@angular/router';
+
 @Component({
-  selector: 'app-product-index',
-  templateUrl: './product-index.component.html',
-  styleUrl: './product-index.component.css'
+  selector: 'app-service-index',
+  templateUrl: './service-index.component.html',
+  styleUrl: './service-index.component.css'
 })
-export class ProductIndexComponent {
+export class ServiceIndexComponent {
   data: any;
   apiUrl=`${environment.apiUrl}`;
 
-  constructor(private _productService: ProductService,private _router: Router) { }
+  constructor(private _serviceService: ServiceService,private _router: Router) { }
 
   ngOnInit(): void {
     this.loadData();
   }
 
   loadData(): void {
-    this._productService.getData().subscribe(
+    this._serviceService.getData().subscribe(
       (response) => {
         this.data = response;
       },
@@ -28,10 +29,10 @@ export class ProductIndexComponent {
     );
 }
 goToUpdatedPage(id:String){
-this._router.navigate(['/dashboard/product/update/'+id]);
+this._router.navigate(['/dashboard/service/update/'+id]);
 }
 goToDeleteData(id:any){
-  this._productService.deleteData(id).subscribe(
+  this._serviceService.deleteData(id).subscribe(
     (response) => {
       this.loadData();
     },
@@ -41,3 +42,4 @@ goToDeleteData(id:any){
   );
 }
 }
+

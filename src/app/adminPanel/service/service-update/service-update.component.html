@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2>Update Service</h2>
+  <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title"class="form-control"
+      formControlName="title">
+      <div *ngIf="serviceForm.get('title')?.invalid && serviceForm.get('title')?.touched" class="text-danger">title is required.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="subTitle">subTitle</label>
+      <input id="subTitle" name="subTitle" class="form-control"
+      formControlName="subTitle"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="paragraph">paragraph</label>
+      <input type="text" id="paragraph" name="paragraph" class="form-control"
+      formControlName="paragraph">
+      <div *ngIf="serviceForm.get('paragraph')?.invalid && serviceForm.get('paragraph')?.touched" class="text-danger">paragraph is required.</div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

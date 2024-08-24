@@ -17,6 +17,7 @@ export class StatisticsComponent implements OnInit{
     this._statisticsService.getData().subscribe(
       (response) => {
         this.data = response;
+        console.log(response)
       },
       (error) => {
         console.error('Error fetching data:', error);

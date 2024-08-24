@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 import { ChooseUsComponent } from './home/choose-us/choose-us.component';
-import { AboutComponent } from './home/about/about.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { NotFoundComponent } from './home/not-found/not-found.component';
 import { LoginComponent } from './authentication/login/login.component';
@@ -16,13 +15,21 @@ import { TestimonialCreateComponent } from './adminPanel/testimonial/testimonial
 import { TestimonialUpdateComponent } from './adminPanel/testimonial/testimonial-update/testimonial-update.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import {authenticationGuard} from './guard/authentication.guard';
+import { ServiceIndexComponent } from './adminPanel/service/service-index/service-index.component';
+import { ServiceUpdateComponent } from './adminPanel/service/service-update/service-update.component';
+import { ServiceCreateComponent } from './adminPanel/service/service-create/service-create.component';
+import { MessageIndexComponent } from './adminPanel/message/message-index/message-index.component';
+import { ProductScreenComponent } from './home/product-screen/product-screen.component';
+import { TestimonialScreenComponent } from './home/testimonial-screen/testimonial-screen.component';
+import { ServiceScreenComponent } from './home/service-screen/service-screen.component';
 const routes: Routes = [
   { path: '', component:MainLayoutComponent,children:[
     { path: '', redirectTo: '/home',pathMatch:'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'choose', component: ChooseUsComponent },
+    { path: 'product', component: ProductScreenComponent },
+    { path: 'testimonial', component: TestimonialScreenComponent },
+    { path: 'service', component: ServiceScreenComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'about', component: AboutComponent },
   ] },
   { path: '', component:DashboardComponent,children:[
     { path: 'dashboard/product/index', component: ProductIndexComponent , canActivate: [authenticationGuard] },
@@ -30,7 +37,11 @@ const routes: Routes = [
     { path: 'dashboard/product/update/:id', component: ProductUpdateComponent, canActivate: [authenticationGuard] },
     { path: 'dashboard/testimonial/index', component: TestimonialIndexComponent, canActivate: [authenticationGuard] },
     { path: 'dashboard/testimonial/create', component:  TestimonialCreateComponent, canActivate: [authenticationGuard]},
-    { path: 'dashboard/testimonial/update', component: TestimonialUpdateComponent , canActivate: [authenticationGuard]},
+    { path: 'dashboard/testimonial/update/:id', component: TestimonialUpdateComponent , canActivate: [authenticationGuard]},
+    { path: 'dashboard/service/index', component: ServiceIndexComponent, canActivate: [authenticationGuard] },
+    { path: 'dashboard/service/create', component:  ServiceCreateComponent, canActivate: [authenticationGuard]},
+    { path: 'dashboard/service/update/:id', component: ServiceUpdateComponent , canActivate: [authenticationGuard]},
+    { path: 'dashboard/message/index', component: MessageIndexComponent, canActivate: [authenticationGuard] },
   ] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},

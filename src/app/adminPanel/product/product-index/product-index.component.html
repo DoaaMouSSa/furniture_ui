@@ -24,7 +24,7 @@
               <td>{{ product.price | currency }}</td>
               <td><img [src]="product.image ? apiUrl + product.image : ''" alt="{{ product.name }}" style="width: 80px;"></td>
               <td>  <button class="btn btn-success btn-sm" (click)="goToUpdatedPage(product._id)">Edit</button></td>
-              <td>  <button class="btn btn-danger btn-sm">Remove</button></td>
+              <td>  <button class="btn btn-danger btn-sm" (click)="goToDeleteData(product._id)">Remove</button></td>
             </tr>
           </tbody>
         </table>

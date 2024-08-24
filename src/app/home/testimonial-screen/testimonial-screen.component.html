@@ -8,11 +8,11 @@
     <div class="row">
       <!-- Start Column 1 -->
       <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" *ngFor="let item of data">
-        <a class="product-item" href="cart.html">
+        <a class="product-item">
           <img [src]="item.image ? apiUrl + item.image : ''" alt="{{ item.name }}" class="img-fluid product-thumbnail">
           <h3 class="product-title">{{item.name}}</h3>
-          <p>{{item.desc}}</p>
-          <strong class="product-price">{{item.price | currency}}</strong>
+          <p>{{item.comment}}</p>
+          <strong class="product-price">{{item.position}}</strong>
         </a>
       </div>
       <!-- End Column 1 -->

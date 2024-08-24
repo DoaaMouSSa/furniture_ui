@@ -6,13 +6,12 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
-
+export class ServiceService {
   constructor(private _http:HttpClient) { }
   private apiUrl=`${environment.apiUrl}`;
   //get
   getData(): Observable<any> {
-    return this._http.get<any>(this.apiUrl+"/product/getAll");
+    return this._http.get<any>(this.apiUrl+"/service/getAll");
   }
   //add
   postData(data: any): Observable<any> {
@@ -22,7 +21,7 @@ export class ProductService {
       })
     };
 
-    return this._http.post<any>(this.apiUrl+"/product/add", data,httpOptions);
+    return this._http.post<any>(this.apiUrl+"/service/add", data,httpOptions);
   }
      //get by id
      GetById(id:string): Observable<any> {
@@ -32,7 +31,7 @@ export class ProductService {
         })
       };
 
-      return this._http.get<any>(this.apiUrl+"/product/GetById/"+id,httpOptions);
+      return this._http.get<any>(this.apiUrl+"/service/GetById/"+id,httpOptions);
     }
    //update
   updateData(id:string,data: any): Observable<any> {
@@ -42,11 +41,11 @@ export class ProductService {
       })
     };
 
-    return this._http.put<any>(this.apiUrl+"/product/update/"+id, data,httpOptions);
+    return this._http.put<any>(this.apiUrl+"/service/update/"+id, data,httpOptions);
   }
 
    //delete
    deleteData(id: number): Observable<void> {
-    return this._http.delete<void>(this.apiUrl+"/product/delete/"+id);
+    return this._http.delete<void>(this.apiUrl+"/service/delete/"+id);
   }
 }

@@ -2,27 +2,29 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Testimonials Data</div>
+        <div class="card-title">Testimonial Data</div>
       </div>
       <div class="card-body">
-        <div class="card-sub">
-          This is the basic table view of the Testimonials :
-        </div>
+          <a class="btn btn-primary" routerLink="/dashboard/testimonial/create">New Testimonial</a>
         <table class="table mt-3">
           <thead>
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Comment</th>
-              <th scope="col">Postition</th>
+              <th scope="col">Position</th>
               <th scope="col">Image</th>
+              <th scope="col">Update</th>
+              <th scope="col">Remove</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of data">
-              <td>{{ product.name }}</td>
-              <td>{{ product.desc }}</td>
-              <td>{{ product.price | currency }}</td>
-              <td><img [src]="product.image ? apiUrl + product.image : ''" alt="{{ product.name }}" style="width: 100px;"></td>
+            <tr *ngFor="let testimonial of data">
+              <td>{{ testimonial.name }}</td>
+              <td>{{ testimonial.comment }}</td>
+              <td>{{ testimonial.position }}</td>
+              <td><img [src]="testimonial.image ? apiUrl + testimonial.image : ''" alt="{{ testimonial.name }}" style="width: 80px;"></td>
+              <td>  <button class="btn btn-success btn-sm" (click)="goToUpdatedPage(testimonial._id)">Edit</button></td>
+              <td>  <button class="btn btn-danger btn-sm" (click)="goToDeleteData(testimonial._id)">Remove</button></td>
             </tr>
           </tbody>
         </table>
