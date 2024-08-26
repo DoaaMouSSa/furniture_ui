@@ -36,6 +36,8 @@ import { ServiceComponent } from './home/service/service/service.component';
 import { ProductScreenComponent } from './home/product-screen/product-screen.component';
 import { TestimonialScreenComponent } from './home/testimonial-screen/testimonial-screen.component';
 import { ServiceScreenComponent } from './home/service-screen/service-screen.component';
+import { ChooseScreenComponent } from './home/choose-screen/choose-screen.component';
+import { HelpScreenComponent } from './home/help-screen/help-screen.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { ServiceScreenComponent } from './home/service-screen/service-screen.com
     ProductScreenComponent,
     TestimonialScreenComponent,
     ServiceScreenComponent,
+    ChooseScreenComponent,
+    HelpScreenComponent,
   ],
   imports: [
     BrowserModule,

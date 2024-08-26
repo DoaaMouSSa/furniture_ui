@@ -18,7 +18,7 @@
                   </svg>
                 </div> <!-- /.icon -->
                 <div class="service-contents">
-                  <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                  <p>{{this.data.address}}</p>
                 </div> <!-- /.service-contents-->
               </div> <!-- /.service -->
             </div>
@@ -31,7 +31,7 @@
                   </svg>
                 </div> <!-- /.icon -->
                 <div class="service-contents">
-                  <p>info.yourdomain.com</p>
+                  <p>{{this.data.email}}</p>
                 </div> <!-- /.service-contents-->
               </div> <!-- /.service -->
             </div>
@@ -44,38 +44,38 @@
                   </svg>
                 </div> <!-- /.icon -->
                 <div class="service-contents">
-                  <p>+1 294 3925 3939</p>
+                  <p>{{this.data.phone}}</p>
                 </div> <!-- /.service-contents-->
               </div> <!-- /.service -->
             </div>
           </div>
 
-          <form>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-6">
                 <div class="form-group">
-                  <label class="text-black" for="fname">First name</label>
-                  <input type="text" class="form-control" id="fname">
+                  <label class="text-black" for="name">Name</label>
+                  <input type="text" class="form-control" id="name" formControlName="name">
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label class="text-black" for="lname">Last name</label>
-                  <input type="text" class="form-control" id="lname">
+                  <label class="text-black" for="phone">phone</label>
+                  <input type="text" class="form-control" id="phone" formControlName="phone">
                 </div>
               </div>
             </div>
             <div class="form-group">
               <label class="text-black" for="email">Email address</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" id="email" formControlName="email">
             </div>
 
             <div class="form-group mb-5">
               <label class="text-black" for="message">Message</label>
-              <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
+              <textarea name="" class="form-control" id="message" cols="30" rows="5" formControlName="message"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
 
         </div>

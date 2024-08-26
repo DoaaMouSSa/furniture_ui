@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { ChooseSectionService } from '../../services/chooseSection/choose-section.service';
-
+import { HelpSectionService } from '../../services/helpSection/help-section.service';
 @Component({
-  selector: 'app-choose-us',
-  templateUrl: './choose-us.component.html',
-  styleUrl: './choose-us.component.css'
+  selector: 'app-help-screen',
+  templateUrl: './help-screen.component.html',
+  styleUrl: './help-screen.component.css'
 })
-export class ChooseUsComponent {
+export class HelpScreenComponent {
   data: any;
   apiUrl=`${environment.apiUrl}`;
-  constructor(private _chooseSectionService: ChooseSectionService) { }
+  constructor(private _helpSectionService: HelpSectionService) { }
 
   ngOnInit(): void {
     this.loadData();
   }
 
   loadData(): void {
-    this._chooseSectionService.getData().subscribe(
+    this._helpSectionService.getData().subscribe(
       (response) => {
         this.data = response;
       },

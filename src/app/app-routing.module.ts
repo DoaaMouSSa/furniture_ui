@@ -22,6 +22,8 @@ import { MessageIndexComponent } from './adminPanel/message/message-index/messag
 import { ProductScreenComponent } from './home/product-screen/product-screen.component';
 import { TestimonialScreenComponent } from './home/testimonial-screen/testimonial-screen.component';
 import { ServiceScreenComponent } from './home/service-screen/service-screen.component';
+import { ChooseScreenComponent } from './home/choose-screen/choose-screen.component';
+import { HelpScreenComponent } from './home/help-screen/help-screen.component';
 const routes: Routes = [
   { path: '', component:MainLayoutComponent,children:[
     { path: '', redirectTo: '/home',pathMatch:'full' },
@@ -30,6 +32,8 @@ const routes: Routes = [
     { path: 'testimonial', component: TestimonialScreenComponent },
     { path: 'service', component: ServiceScreenComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'choose', component: ChooseScreenComponent },
+    { path: 'help', component: HelpScreenComponent },
   ] },
   { path: '', component:DashboardComponent,children:[
     { path: 'dashboard/product/index', component: ProductIndexComponent , canActivate: [authenticationGuard] },

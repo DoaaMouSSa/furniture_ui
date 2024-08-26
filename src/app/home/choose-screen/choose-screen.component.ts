@@ -3,11 +3,11 @@ import { environment } from '../../../environments/environment';
 import { ChooseSectionService } from '../../services/chooseSection/choose-section.service';
 
 @Component({
-  selector: 'app-choose-us',
-  templateUrl: './choose-us.component.html',
-  styleUrl: './choose-us.component.css'
+  selector: 'app-choose-screen',
+  templateUrl: './choose-screen.component.html',
+  styleUrl: './choose-screen.component.css'
 })
-export class ChooseUsComponent {
+export class ChooseScreenComponent {
   data: any;
   apiUrl=`${environment.apiUrl}`;
   constructor(private _chooseSectionService: ChooseSectionService) { }
